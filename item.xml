@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:descendantFocusability="beforeDescendants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="8dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="4">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_gravity="bottom|left"
+                        android:orientation="vertical"
+                        android:background="@color/purple_200"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:id="@+id/statusTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Thsi test Text for example" android:textIsSelectable="true"/>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@color/cardview_light_background"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_weight="0.8">
+                <ImageView
+                    android:id="@+id/likeImageView"
+                    android:padding="5dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_action_copy"/>
+                <ImageView
+                    android:id="@+id/shareImageView"
+                    android:padding="5dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_action_share"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
