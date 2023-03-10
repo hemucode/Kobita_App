@@ -1,72 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:descendantFocusability="beforeDescendants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="6dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="5dp"
+        android:descendantFocusability="beforeDescendants"
         app:cardCornerRadius="8dp">
+
         <LinearLayout
-            android:orientation="vertical"
-            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
             android:weightSum="4">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <FrameLayout
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal">
+
                     <LinearLayout
-                        android:layout_gravity="bottom|left"
-                        android:orientation="vertical"
-                        android:background="@color/purple_200"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView android:textSize="18sp"
-                            android:textColor="@color/white"
-                            android:id="@+id/statusTextView"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:background="@color/light_rad"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/status_View"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
-                            android:text="Thsi test Text for example" android:textIsSelectable="true"/>
+                            android:text="@string/poem_1"
+                            android:textColor="@color/white"
+                            android:textIsSelectable="true"
+                            android:textSize="18sp" />
                     </LinearLayout>
+
                 </FrameLayout>
+
             </LinearLayout>
-            <LinearLayout android:gravity="center"
-                android:orientation="horizontal"
-                android:background="@color/cardview_light_background"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:layout_weight="0.8">
+                android:layout_weight="0.8"
+                android:background="@color/dark_rad"
+                android:gravity="right"
+                android:orientation="horizontal">
+
                 <ImageView
-                    android:id="@+id/likeImageView"
-                    android:padding="5dp"
+                    android:id="@+id/copy_icon"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/ic_action_copy"/>
-                <ImageView
-                    android:id="@+id/shareImageView"
                     android:padding="5dp"
+                    android:src="@drawable/copy_icon" />
+
+                <ImageView
+                    android:id="@+id/share_icon"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/ic_action_share"/>
+                    android:padding="5dp"
+                    android:src="@drawable/share_icon" />
             </LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

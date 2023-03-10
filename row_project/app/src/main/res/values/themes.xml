@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ভালোবাসারকবিতা" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/light_rad</item>
+        <item name="colorPrimaryVariant">@color/dark_rad</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="21">@color/dark_rad</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.ভালোবাসারকবিতা.Fullscreen" parent="Theme.ভালোবাসারকবিতা">
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+    <style name="Theme.ভালোবাসারকবিতা.Actionbar">
+        <item name="android:windowActionBar">true</item>
+    </style>
+</resources>

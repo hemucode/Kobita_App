@@ -1,4 +1,6 @@
-package com.example.myapplicationsfd;
+package com.codehemu.bangla_bhlobasar_kabita;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -11,16 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class Adapts extends RecyclerView.Adapter<Adapts.ViewHolder> {
     private Context context;
     private List<ListItem> listItems;
 
-    public MyAdapter(List<ListItem> listItems, Context context) {
+    public Adapts(List<ListItem> listItems, Context context) {
         this.listItems = listItems;
         this.context = context;
     }
@@ -34,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         ListItem listItem = this.listItems.get(position);
         holder.desc.setText(listItem.getDesc());
-        holder.likeImageView.setTag(Integer.valueOf((int) R.drawable.ic_action_copy));
+        holder.likeImageView.setTag(Integer.valueOf((int) R.drawable.copy_icon));
     }
 
 
@@ -51,19 +51,31 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            this.desc = (TextView) itemView.findViewById(R.id.statusTextView);
-            this.shareImg = (ImageView) itemView.findViewById(R.id.shareImageView);
-            this.likeImageView = (ImageView) itemView.findViewById(R.id.likeImageView);
+            this.desc = (TextView) itemView.findViewById(R.id.status_View);
+            this.shareImg = (ImageView) itemView.findViewById(R.id.share_icon);
+            this.likeImageView = (ImageView) itemView.findViewById(R.id.copy_icon);
             this.likeImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String position = ViewHolder.this.desc.getText().toString();
-                    ClipboardManager myClickboard = (ClipboardManager) MyAdapter.this.context.getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipboardManager Clipboard_Manager = (ClipboardManager) Adapts.this.context.getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData myClip = ClipData.newPlainText("text", position);
-                    myClickboard.setPrimaryClip(myClip);
+                    Clipboard_Manager.setPrimaryClip(myClip);
                     Toast.makeText(v.getContext(), "কপি করা হয়েছে", Toast.LENGTH_LONG).show();
                 }
             });
+
+            this.desc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String position = ViewHolder.this.desc.getText().toString();
+                    ClipboardManager Clipboard_Manager = (ClipboardManager) Adapts.this.context.getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData myClip = ClipData.newPlainText("text", position);
+                    Clipboard_Manager.setPrimaryClip(myClip);
+                    Toast.makeText(v.getContext(), "কপি করা হয়েছে", Toast.LENGTH_LONG).show();
+                }
+            });
+
             this.shareImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
